@@ -1,73 +1,140 @@
-/*  Main page styles */ 
-
+/* Main page styles */
+html, body {
+  height: 100%;
+}
 body {
-  background-image: url(zdjecia/tlo2.jpg);
-  background-attachment: fixed;
+  min-width: 900px;
+  font-family: "Libre Baskerville", serif;
 }
 
 a {
   text-decoration: none;
 }
 
-.container{
-  text-align:center;
-}
+/* header styles */
 
-h1 {
-  font-family: serif;
-  font-size: 40px;
-  color: white;
+#header {
+  width: 100%;
+  height: 10%;
+  background-color: #1f2022;
   text-align: center;
 }
 
-#jumbotron img {
-  border:5px solid black;
-  float:left;
+#header h1 {
+  display: block;
+  color:white;
+  font-weight: 700;
+  font-size: 4.5em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); /* vertical align text. brutal */
+}
+/* jumbotron styles */
+#jumbotron {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+#cover-photo {
+  overflow: hidden;
+}
+
+#cover-photo, #quote {
+}
+
+#cover-photo  {
+  background-image: url(zdjecia/cover-photo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(7px);
+  -o-filter: blur(7px);
+  -ms-filter: blur(7px);
+  filter: blur(7px);
+  height: 100%;
+  //min-height: 700px;
+  width: 100%;
+  overflow: hidden;
 }
 
 #quote {
-  font-size:20px;
-  font-style: italic;
-  font-family: serif;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  display: inline;
+  top: 30%;
+  bottom: 70%;
+  left: 0;
+  right: 0;
+  font-size: 4em;
   color:white;
-  position: relative;
-  top: -240px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: normal;
 }
 
-.inner-wrapper {
-  display: inline-block;
-  padding-left: 20px;
-}
+/* menu styles */
 
 #menu {
-  padding-top: 20px;
+  height: 7.5%;
 }
 
-#menu > ul > li {
-  display: inline-block;
+#menu ul {
+  display: flex;
+  height: 100%;
+}
+
+#menu li {
+  display: table;
+  list-style: none;
+  width: 33.3%;
+  height: 100%;
+  border-bottom: 3px solid white;
+}
+#menu li:last-child {
+  width: 33.5%; /* make 3 divs fill whole #menu */
+}
+
+
+#menu a {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  background-color:#1f2022 ;
+  font-weight: 400;
+  font-size: 3em;
+  vertical-align: middle;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   text-align: center;
+  color: #f2f2f2;
 }
 
-#menu > ul > li > a:hover {
-  background-color: #F2F2F2;
+#menu a:hover {
+  background-color: #f2f2f2;
+  color: #1f2022;
+}
+#menu li:first-child a, #menu li:nth-child(2) a {
+  border-right: 3px solid white;
 }
 
-li > a:link, a:visited {
-  background-color: #A4A4A4;
-  padding: 24px 35px;
-  color: black;
-}
+/* footer styles */
 
-p {
-  color:white;
-  font-size:17px;
-  margin: 2cm 4cm 0.5cm 4cm;
-}
-
-#footer > h3 {
-  font-family: serif;
-  font-size: 15px;
+#footer {
+  background-color: #1f2022;
+  width: 100%;
+  height: 2.5%;
   text-align: right;
-  color: grey;
-  margin-bottom: -10px;
+}
+#footer h3 {
+  padding-right: 1%;
+  color: #f2f2f2;
+  font-style: italic;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); /* vertical align text. brutal */
+
 }
